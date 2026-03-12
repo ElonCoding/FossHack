@@ -1,0 +1,107 @@
+.tickets-page { }
+
+.page-header { margin-bottom: 32px; }
+.page-header h2 { font-size: 1.6rem; }
+.page-subtitle { color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; }
+
+.tickets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 24px;
+}
+
+.ticket-card {
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-smooth);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.ticket-card:hover {
+  box-shadow: 0 0 30px color-mix(in srgb, var(--glow-color) 20%, transparent);
+  border-color: color-mix(in srgb, var(--glow-color) 25%, transparent);
+}
+
+.ticket-card-top {
+  padding: 24px 24px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+.ticket-card-info { flex: 1; }
+.ticket-status {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+.ticket-card-event {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+.ticket-card-meta {
+  display: flex;
+  gap: 12px;
+}
+.ticket-card-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+.ticket-card-qr { flex-shrink: 0; }
+.ticket-qr-svg { border-radius: 8px; }
+
+/* Divider with notches */
+.ticket-card-divider {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0 -1px;
+}
+.divider-notch {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--bg-maroon);
+  flex-shrink: 0;
+}
+.divider-notch.left { margin-left: -10px; }
+.divider-notch.right { margin-right: -10px; }
+.divider-line {
+  flex: 1;
+  border-top: 2px dashed rgba(255, 255, 255, 0.08);
+}
+
+.ticket-card-bottom {
+  padding: 16px 24px 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.ticket-detail { text-align: center; flex: 1; }
+.ticket-detail-label {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: var(--font-heading);
+  margin-bottom: 4px;
+}
+.ticket-detail-value {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+@media (max-width: 500px) {
+  .tickets-grid { grid-template-columns: 1fr; }
+  .ticket-card-top { flex-direction: column; align-items: center; text-align: center; }
+  .ticket-card-bottom { flex-direction: column; align-items: center; }
+}
