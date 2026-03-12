@@ -1,0 +1,191 @@
+.admin-page { }
+
+/* Stats */
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.admin-stat-card {
+  padding: 20px;
+  text-align: center;
+}
+.admin-stat-value {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.admin-stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 4px;
+}
+
+/* Toolbar */
+.admin-toolbar { margin-bottom: 20px; }
+.admin-search { position: relative; max-width: 400px; }
+.admin-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+/* Table */
+.admin-table-wrap {
+  overflow-x: auto;
+  padding: 0;
+}
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.admin-table th {
+  padding: 14px 16px;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  white-space: nowrap;
+}
+.admin-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+.admin-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+.table-event-name {
+  font-weight: 600;
+  color: var(--text-primary) !important;
+}
+
+.admin-reg-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-status {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.status-active {
+  background: var(--accent-lime-dim);
+  color: var(--accent-lime);
+  border: 1px solid rgba(181, 255, 77, 0.2);
+}
+.status-draft {
+  background: var(--accent-gold-dim);
+  color: var(--accent-gold);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+}
+.status-upcoming {
+  background: var(--accent-aqua-dim);
+  color: var(--accent-aqua);
+  border: 1px solid rgba(77, 240, 255, 0.2);
+}
+
+/* Actions */
+.admin-actions {
+  display: flex;
+  gap: 6px;
+}
+.action-btn {
+  width: 32px; height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  font-size: 1rem;
+}
+.action-btn.edit {
+  background: rgba(77, 240, 255, 0.08);
+  color: var(--accent-aqua);
+  border: 1px solid rgba(77, 240, 255, 0.12);
+}
+.action-btn.edit:hover {
+  background: rgba(77, 240, 255, 0.15);
+  box-shadow: 0 0 12px rgba(77, 240, 255, 0.15);
+}
+.action-btn.delete {
+  background: rgba(255, 77, 106, 0.08);
+  color: var(--accent-maroon);
+  border: 1px solid rgba(255, 77, 106, 0.12);
+}
+.action-btn.delete:hover {
+  background: rgba(255, 77, 106, 0.15);
+  box-shadow: 0 0 12px rgba(255, 77, 106, 0.15);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+  backdrop-filter: blur(4px);
+}
+.modal-card {
+  width: 100%;
+  max-width: 520px;
+  padding: 32px;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.modal-header h3 { font-size: 1.2rem; }
+.modal-close {
+  width: 32px; height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+.modal-close:hover { background: rgba(255, 77, 106, 0.1); color: var(--accent-maroon); }
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.modal-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.modal-form select.input-field {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .admin-table-wrap { font-size: 0.8rem; }
+  .modal-row { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,233 @@
+/* ============================================
+   Auth Pages (Login & Register)
+   ============================================ */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Orbs */
+.auth-bg-effects {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.auth-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+}
+.orb-1 {
+  width: 400px; height: 400px;
+  background: rgba(181, 255, 77, 0.06);
+  top: -100px; right: -100px;
+}
+.orb-2 {
+  width: 350px; height: 350px;
+  background: rgba(77, 240, 255, 0.05);
+  bottom: -100px; left: -100px;
+}
+.orb-3 {
+  width: 300px; height: 300px;
+  background: rgba(168, 85, 247, 0.04);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Card */
+.auth-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 440px;
+  padding: 40px;
+}
+.register-card { max-width: 520px; }
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.auth-logo {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: inline-flex;
+  margin-bottom: 20px;
+}
+.auth-header h2 {
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+.auth-header p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Form */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.auth-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.input-group {
+  position: relative;
+}
+.input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  z-index: 1;
+}
+.input-group .input-field {
+  padding-left: 42px;
+}
+
+.auth-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+}
+.auth-remember {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+.auth-remember input {
+  accent-color: var(--accent-lime);
+}
+.auth-forgot {
+  color: var(--accent-lime);
+  font-weight: 500;
+}
+
+.auth-submit {
+  width: 100%;
+  padding: 14px;
+  margin-top: 4px;
+}
+
+/* Divider */
+.auth-divider {
+  position: relative;
+  text-align: center;
+  margin: 20px 0;
+}
+.auth-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0; right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+.auth-divider span {
+  position: relative;
+  background: rgba(20, 20, 30, 0.9);
+  padding: 0 16px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Social Buttons */
+.auth-socials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.auth-social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all var(--transition-smooth);
+}
+.auth-social-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Switch link */
+.auth-switch {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.auth-switch a {
+  color: var(--accent-lime);
+  font-weight: 600;
+}
+
+/* Skills */
+.skills-section {
+  margin-top: 4px;
+}
+.skills-label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: var(--font-heading);
+}
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+.skill-pill:hover {
+  border-color: rgba(181, 255, 77, 0.2);
+  color: var(--text-primary);
+}
+.skill-pill.active {
+  background: var(--accent-lime-dim);
+  border-color: rgba(181, 255, 77, 0.25);
+  color: var(--accent-lime);
+}
+
+@media (max-width: 500px) {
+  .auth-card { padding: 28px 20px; }
+  .auth-form-row { grid-template-columns: 1fr; }
+  .auth-socials { grid-template-columns: 1fr; }
+}
